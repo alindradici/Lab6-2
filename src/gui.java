@@ -14,6 +14,7 @@ public class gui extends JFrame {
     private JButton afiseaza;
     private JButton modifica;
     private JButton cauta;
+    private JButton sterge;
     private Person [] listaPersoane = new Person [10];
     private String [] title = new String[10];
     private int index=0;
@@ -76,6 +77,15 @@ public class gui extends JFrame {
                  JOptionPane.showMessageDialog(null,title[i] + " pozitia " + ++i); return;
                 }
             }JOptionPane.showMessageDialog(null,"negasit");
+            }
+        });
+
+        sterge = new JButton("sterge contact ");
+        add(sterge);
+        sterge.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            title[list.getSelectedIndex()] = null;
+            listaPersoane[list.getSelectedIndex()] = null;
             }
         });
 
